@@ -5,9 +5,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RoomController;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,7 +42,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('report/{id}', [ReportController::class, 'delete']);
 
     Route::middleware('ability:role-admin')->prefix('admin')->group(function () {
+        // User
         Route::get('user/{id}', [UserController::class, 'getUserAdmin']);
+        Route::post('user', [UserController::class, 'addUser']);
 
         Route::get('complaints', [ComplaintController::class, 'listAdmin']);
         Route::put('complaint', [ComplaintController::class, 'updateAdmin']);
