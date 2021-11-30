@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -47,5 +48,12 @@ Route::middleware('auth:sanctum')->group(function () {
 
         Route::get('complaints', [ComplaintController::class, 'listAdmin']);
         Route::put('complaint', [ComplaintController::class, 'updateAdmin']);
+
+        // Room
+        Route::post('room', [RoomController::class, 'addRoom']);
+        Route::get('rooms', [RoomController::class, 'list']);
+        Route::put('room', [RoomController::class, 'update']);
+        Route::get('room/{code}', [RoomController::class, 'get']);
+        Route::delete('room/{code}', [RoomController::class, 'addRoom']);
     });
 });
