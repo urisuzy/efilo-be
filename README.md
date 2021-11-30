@@ -5,11 +5,11 @@ Semua kontrol program ada di cmd.
 ## Road Map
 * ✅ Auth
 * ✅ Post
-* ❌ Bill
+* ✅ Bill
 * ✅ Complaint
 * ✅ Report
 * ✅ Room
-* ❌ User
+* ✅ User
 
 ## Tutorial
 Beberapa tutorial yang bermanfaat
