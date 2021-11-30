@@ -8,7 +8,7 @@ Semua kontrol program ada di cmd.
 * ❌ Bill
 * ✅ Complaint
 * ✅ Report
-* ❌ Room
+* ✅ Room
 * ❌ User
 
 ## Tutorial
