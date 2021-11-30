@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'id_room',
+        'room_id',
         'birthday',
         'phone_number',
         'address',
@@ -58,7 +58,7 @@ class User extends Authenticatable
 
     public function room()
     {
-        return $this->hasOne(Room::class);
+        return $this->belongsTo(Room::class);
     }
 
     public function posts()

@@ -15,8 +15,8 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user');
-            $table->foreignId('id_room');
+            $table->foreignId('user_id');
+            $table->foreignId('room_id');
             $table->integer('total');
             $table->tinyInteger('month');
             $table->tinyInteger('year');

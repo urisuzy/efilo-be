@@ -9,8 +9,8 @@ class Bill extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_user',
-        'id_room',
+        'user_id',
+        'room_id',
         'total',
         'month',
         'year',
@@ -19,6 +19,11 @@ class Bill extends Model
     ];
 
     public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function room()
     {
         return $this->belongsTo(User::class);
     }

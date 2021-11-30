@@ -46,7 +46,7 @@ class ComplaintController extends Controller
         try {
             $complaint = Complaint::find($id);
             if ($complaint) {
-                if ($request->user()->tokenCan('role:admin') or $request->user_id == Auth::id()) {
+                if ($request->user()->tokenCan('role-admin') or $request->user_id == Auth::id()) {
                     $complaint->delete();
                     return $this->successReponse(true);
                 }

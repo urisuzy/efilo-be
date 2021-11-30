@@ -21,9 +21,9 @@ class AuthController extends Controller
             // Authentication was successful...
             $user = User::find(Auth::id());
             if ($user->role == 'admin') {
-                $createToken = $user->createToken('efillokos', ['role:admin']);
+                $createToken = $user->createToken('efillokos', ['role-admin']);
             } else {
-                $createToken = $user->createToken('efillokos', ['role:user']);
+                $createToken = $user->createToken('efillokos', ['role-user']);
             }
 
             // $result['token'] = $createToken->token;

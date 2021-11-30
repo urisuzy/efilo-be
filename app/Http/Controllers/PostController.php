@@ -46,7 +46,7 @@ class PostController extends Controller
         try {
             $post = Post::find($id);
             if ($post) {
-                if ($request->user()->tokenCan('role:admin') or $post->user_id == Auth::id()) {
+                if ($request->user()->tokenCan('role-admin') or $post->user_id == Auth::id()) {
                     $post->delete();
                     return $this->successReponse(true);
                 }
