@@ -16,7 +16,7 @@ class RoomController extends Controller
             $this->validate($request, [
                 'code' => 'required',
                 'size' => 'required',
-                'description' => 'required',
+                'type' => 'required',
                 'price' => 'required',
                 'status' => 'required'
             ]);
@@ -49,7 +49,7 @@ class RoomController extends Controller
             $this->validate($request, [
                 'code' => 'required',
                 'size' => 'required',
-                'description' => 'required',
+                'type' => 'required',
                 'price' => 'required',
                 'status' => 'required'
             ]);

@@ -18,9 +18,9 @@ class ReportController extends Controller
             ]);
 
             $image = null;
-            if (!empty($request->file('image'))) {
+            if (!empty($request->file('file'))) {
                 $service = new \App\Services\ImageService;
-                $image = $service->uploadImage($request->file('image'));
+                $image = $service->uploadImage($request->file('file'));
             }
 
             $report = Report::create([

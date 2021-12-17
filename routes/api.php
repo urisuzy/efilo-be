@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReportController;
@@ -41,13 +42,20 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('reports', [ReportController::class, 'list']);
     Route::delete('report/{id}', [ReportController::class, 'delete']);
 
+    Route::get('bills', [BillController::class, 'list']);
+
     Route::middleware('ability:role-admin')->prefix('admin')->group(function () {
         // User
         Route::get('user/{id}', [UserController::class, 'getUserAdmin']);
         Route::post('user', [UserController::class, 'addUser']);
+        Route::put('user/{id}', [UserController::class, 'editUser']);
+        Route::get('users', [UserController::class, 'listUsers']);
+        Route::get('users/bill', [UserController::class, 'listUsersBill']);
 
         Route::get('complaints', [ComplaintController::class, 'listAdmin']);
         Route::put('complaint', [ComplaintController::class, 'updateAdmin']);
+
+        Route::post('bill', [BillController::class, 'update']);
 
         // Room
         Route::post('room', [RoomController::class, 'addRoom']);

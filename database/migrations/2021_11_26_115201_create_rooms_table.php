@@ -17,7 +17,7 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->string('code')->index();
             $table->string('size');
-            $table->string('description');
+            $table->string('type');
             $table->string('price');
             $table->string('status');
             $table->timestamps();

@@ -19,7 +19,7 @@ class CreateBillsTable extends Migration
             $table->foreignId('room_id');
             $table->integer('total');
             $table->tinyInteger('month');
-            $table->tinyInteger('year');
+            $table->integer('year');
             $table->string('status')->nullable();
             $table->timestamp('pay_date')->nullable();
             $table->timestamps();

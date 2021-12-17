@@ -29,6 +29,8 @@ class AuthController extends Controller
             // $result['token'] = $createToken->token;
             $result['accessToken'] = $createToken->plainTextToken;
             $result['role'] = $user->role;
+            $result['name'] = $user->name;
+            $result['room'] = $user->room->code ?? 'Kosong';
 
             return $this->successReponse($result);
         } else {
